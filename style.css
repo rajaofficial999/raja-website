@@ -64,13 +64,13 @@ a{
 }
 
 .brand{
-    display:flex;
-    align-items:center;
-    gap:18px;
-    font-size:16px;
-    font-weight:900;
-    letter-spacing:1.6px;
-    white-space:nowrap;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  font-size:16px;
+  font-weight:900;
+  letter-spacing:1.8px;
+  white-space:nowrap;
 }
 
 .brand-mark{

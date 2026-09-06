@@ -1,147 +1,539 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAJA // GAMER</title>
 
-<title>RAJA</title>
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    background: #050505;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: hidden;
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    width: 500px;
-    height: 500px;
-    background: #6a00ff;
-    filter: blur(180px);
-    opacity: 0.35;
-    border-radius: 50%;
-}
-
-.container {
-    position: relative;
-    z-index: 2;
-    padding: 30px;
-}
-
-.logo {
-    font-size: clamp(70px, 20vw, 150px);
-    font-weight: 900;
-    letter-spacing: 15px;
-    background: linear-gradient(90deg, #fff, #8b5cf6, #00e5ff);
-    -webkit-background-clip: text;
-    color: transparent;
-    text-shadow: 0 0 35px rgba(139,92,246,.5);
-    animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-    from {
-        filter: drop-shadow(0 0 5px #8b5cf6);
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    to {
-        filter: drop-shadow(0 0 25px #00e5ff);
+
+    :root {
+      --bg: #05070d;
+      --panel: rgba(10, 15, 28, 0.82);
+      --cyan: #00f5ff;
+      --purple: #9d4edd;
+      --green: #39ff88;
+      --text: #f4f7ff;
+      --muted: #8993a8;
     }
-}
 
-.tagline {
-    margin-top: 15px;
-    font-size: 18px;
-    color: #bbb;
-    letter-spacing: 4px;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.btn {
-    display: inline-block;
-    margin-top: 35px;
-    padding: 15px 35px;
-    border: 1px solid #8b5cf6;
-    border-radius: 50px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: .3s;
-    box-shadow: 0 0 15px rgba(139,92,246,.3);
-}
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
 
-.btn:hover {
-    transform: scale(1.08);
-    background: #8b5cf6;
-    box-shadow: 0 0 30px #8b5cf6;
-}
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      background:
+        linear-gradient(rgba(0,245,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,245,255,.035) 1px, transparent 1px);
+      background-size: 45px 45px;
+      animation: gridMove 12s linear infinite;
+    }
 
-.card {
-    margin-top: 45px;
-    padding: 25px;
-    border: 1px solid rgba(255,255,255,.12);
-    border-radius: 20px;
-    background: rgba(255,255,255,.05);
-    backdrop-filter: blur(10px);
-}
+    body::after {
+      content: "";
+      position: fixed;
+      width: 420px;
+      height: 420px;
+      left: -180px;
+      top: 20%;
+      z-index: -2;
+      background: var(--purple);
+      filter: blur(170px);
+      opacity: .22;
+    }
 
-.card h2 {
-    margin-bottom: 10px;
-}
+    .glow {
+      position: fixed;
+      width: 350px;
+      height: 350px;
+      right: -150px;
+      top: 55%;
+      background: var(--cyan);
+      filter: blur(170px);
+      opacity: .14;
+      z-index: -2;
+    }
 
-.card p {
-    color: #aaa;
-    line-height: 1.6;
-}
+    @keyframes gridMove {
+      from { background-position: 0 0, 0 0; }
+      to { background-position: 0 45px, 45px 0; }
+    }
 
-footer {
-    margin-top: 30px;
-    color: #666;
-    font-size: 13px;
-}
-</style>
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 7%;
+      background: rgba(5,7,13,.78);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(0,245,255,.12);
+    }
+
+    .logo {
+      color: var(--cyan);
+      font-weight: 900;
+      letter-spacing: 3px;
+      font-size: 20px;
+      text-shadow: 0 0 15px var(--cyan);
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 13px;
+      transition: .25s;
+    }
+
+    nav a:hover {
+      color: var(--cyan);
+    }
+
+    section {
+      width: min(1100px, 90%);
+      margin: auto;
+      padding: 100px 0;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 120px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 14px;
+      border: 1px solid rgba(57,255,136,.35);
+      background: rgba(57,255,136,.06);
+      border-radius: 30px;
+      color: var(--green);
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 12px var(--green);
+      animation: pulse 1.3s infinite;
+    }
+
+    @keyframes pulse {
+      50% { opacity: .3; transform: scale(.7); }
+    }
+
+    h1 {
+      font-size: clamp(58px, 13vw, 140px);
+      line-height: .9;
+      letter-spacing: -6px;
+      font-weight: 900;
+      color: white;
+      text-shadow:
+        0 0 10px rgba(0,245,255,.5),
+        0 0 35px rgba(157,78,221,.4);
+    }
+
+    .subtitle {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: clamp(14px, 2vw, 19px);
+      letter-spacing: 4px;
+    }
+
+    .typing {
+      margin-top: 18px;
+      color: var(--cyan);
+      font-family: monospace;
+      font-size: 15px;
+      min-height: 22px;
+    }
+
+    .buttons {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 13px 22px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 13px;
+      transition: .25s;
+    }
+
+    .primary {
+      color: #001014;
+      background: var(--cyan);
+      box-shadow: 0 0 25px rgba(0,245,255,.35);
+    }
+
+    .secondary {
+      color: white;
+      border: 1px solid rgba(255,255,255,.15);
+      background: rgba(255,255,255,.03);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .terminal {
+      width: min(700px, 100%);
+      margin: 60px auto 0;
+      text-align: left;
+      border: 1px solid rgba(0,245,255,.2);
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(3,6,12,.8);
+      box-shadow: 0 0 40px rgba(0,245,255,.08);
+    }
+
+    .terminal-head {
+      padding: 11px 15px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      color: var(--muted);
+      font: 12px monospace;
+    }
+
+    .terminal-body {
+      padding: 20px;
+      font: 13px/2 monospace;
+      color: #b9c3d8;
+    }
+
+    .terminal-body span {
+      color: var(--green);
+    }
+
+    .section-title {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .section-title b {
+      color: var(--cyan);
+    }
+
+    .section-text {
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 700px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 35px;
+    }
+
+    .card {
+      padding: 25px;
+      border: 1px solid rgba(255,255,255,.09);
+      background: var(--panel);
+      border-radius: 12px;
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(0,245,255,.4);
+      box-shadow: 0 10px 40px rgba(0,245,255,.08);
+    }
+
+    .icon {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 35px;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 25px 10px;
+      border: 1px solid rgba(157,78,221,.22);
+      background: rgba(157,78,221,.06);
+      border-radius: 10px;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--cyan);
+      font-size: 30px;
+      margin-bottom: 5px;
+    }
+
+    .stat small {
+      color: var(--muted);
+      letter-spacing: 2px;
+    }
+
+    .mission {
+      position: relative;
+    }
+
+    .mission::before {
+      content: "MISSION";
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      color: rgba(0,245,255,.2);
+      font: 10px monospace;
+      letter-spacing: 2px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      border-top: 1px solid rgba(255,255,255,.07);
+      color: var(--muted);
+      font: 12px monospace;
+    }
+
+    .glitch {
+      animation: glitch 4s infinite;
+    }
+
+    @keyframes glitch {
+      0%, 92%, 100% { transform: translate(0); }
+      94% { transform: translate(2px, -1px); }
+      96% { transform: translate(-2px, 1px); }
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        padding: 16px 5%;
+      }
+
+      nav div:last-child {
+        display: none;
+      }
+
+      section {
+        width: 88%;
+        padding: 75px 0;
+      }
+
+      h1 {
+        letter-spacing: -3px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .terminal {
+        margin-top: 40px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <div class="glow"></div>
 
-    <div class="logo">RAJA</div>
-
-    <div class="tagline">
-        WELCOME TO MY WORLD
+  <nav>
+    <div class="logo">RAJA.exe</div>
+    <div>
+      <a href="#about">ABOUT</a>
+      <a href="#loadout">LOADOUT</a>
+      <a href="#missions">MISSIONS</a>
     </div>
+  </nav>
 
-    <a class="btn" href="#about">
-        ENTER WEBSITE
-    </a>
+  <main>
 
-    <div class="card" id="about">
-        <h2>👑 ABOUT RAJA</h2>
-        <p>
-            Welcome to the official RAJA website.
-            <br>
-            This is my own little world on the internet.
-        </p>
-    </div>
+    <section class="hero">
+      <div>
+        <div class="status">
+          <span class="dot"></span>
+          SYSTEM ONLINE
+        </div>
 
-    <footer>
-        © 2026 RAJA • All Rights Reserved
-    </footer>
+        <h1 class="glitch">RAJA</h1>
 
-</div>
+        <div class="subtitle">GAMER • CREATOR • DIGITAL PLAYER</div>
+
+        <div class="typing" id="typing"></div>
+
+        <div class="buttons">
+          <a class="btn primary" href="#missions">ENTER SYSTEM</a>
+          <a class="btn secondary" href="#about">VIEW PROFILE</a>
+        </div>
+
+        <div class="terminal">
+          <div class="terminal-head">● ● ● &nbsp; raja@system:~</div>
+          <div class="terminal-body">
+            &gt; boot_sequence: <span>COMPLETE</span><br>
+            &gt; player_mode: <span>GAMER</span><br>
+            &gt; creativity: <span>100%</span><br>
+            &gt; mission_status: <span>BUILDING...</span><br>
+            &gt; access: <span>PORTFOLIO_SIMULATION</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">PLAYER <b>PROFILE</b></h2>
+      <p class="section-text">
+        Welcome to the digital zone of RAJA. This is a personal gamer-style
+        portfolio built for creativity, gaming and future projects.
+      </p>
+
+      <div class="stats">
+        <div class="stat">
+          <strong>01</strong>
+          <small>PLAYER</small>
+        </div>
+
+        <div class="stat">
+          <strong>∞</strong>
+          <small>XP POTENTIAL</small>
+        </div>
+
+        <div class="stat">
+          <strong>24/7</strong>
+          <small>CREATE MODE</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="loadout">
+      <h2 class="section-title">MY <b>LOADOUT</b></h2>
+      <p class="section-text">
+        The current digital loadout. More abilities will be unlocked as the
+        journey continues.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <div class="icon">🎮</div>
+          <h3>GAMING</h3>
+          <p>Gaming, challenges and competitive player energy.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">💻</div>
+          <h3>WEB BUILDING</h3>
+          <p>Creating websites and experimenting with new ideas.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">⚡</div>
+          <h3>CREATIVITY</h3>
+          <p>Turning simple ideas into cool digital experiences.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="missions">
+      <h2 class="section-title">ACTIVE <b>MISSIONS</b></h2>
+      <p class="section-text">
+        A showcase area for projects, games and experiments.
+      </p>
+
+      <div class="cards">
+        <div class="card mission">
+          <div class="icon">🟣</div>
+          <h3>RAJA WEBSITE</h3>
+          <p>Cyber-style personal portfolio and gamer profile.</p>
+        </div>
+
+        <div class="card mission">
+          <div class="icon">🚀</div>
+          <h3>UPCOMING</h3>
+          <p>New projects are being prepared. Stay tuned.</p>
+        </div>
+
+        <div class="card mission">
+          <div class="icon">🔒</div>
+          <h3>CLASSIFIED</h3>
+          <p>Future project slot — details will be revealed later.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    RAJA.exe // GAMER SYSTEM // <span id="year"></span>
+  </footer>
+
+  <script>
+    const text = "> initializing raja_gamer.exe...";
+    const typing = document.getElementById("typing");
+
+    let i = 0;
+
+    function typeText() {
+      if (i < text.length) {
+        typing.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeText, 55);
+      }
+    }
+
+    typeText();
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 
 </body>
 </html>

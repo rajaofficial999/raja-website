@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050816"><meta name="description" content="RAJA NEXUS — free gaming, mini-games, safe cyber simulator and account portal.">
+<title>RAJA NEXUS • LIVE</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="scanlines"></div>
+<header>
+  <a class="brand" href="#home" aria-label="RAJA NEXUS home"><span class="brand-mark">RN</span><span>RAJA <b>NEXUS</b></span></a>
+  <button class="menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <nav>
+    <a href="#home">Home</a><a href="#gaming">Gaming</a><a href="#games">Games</a><a href="#cyber">Cyber Demo</a><a href="#bot">Nexus Bot</a><a href="#account">Account</a><a href="#admin">Admin</a>
+  </nav>
+</header>
+<main>
+<section id="home" class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="dot"></span> SYSTEM ONLINE • FREE BUILD</div>
+    <h1>RAJA <span>NEXUS</span></h1>
+    <p class="lead">Your personal gaming command center — presets, practice tools, mini-games, safe cyber simulations and a real login/database system.</p>
+    <div class="actions"><a class="btn" href="#gaming">ENTER NEXUS</a><a class="btn ghost" href="#games">PLAY GAMES</a></div>
+    <div class="chips"><span>⚡ 100% Free tools</span><span>🤖 Local Nexus Bot</span><span>🛡 Safe-by-design</span></div>
+  </div>
+  <div class="core-wrap"><div class="core"><div class="core-ring r1"></div><div class="core-ring r2"></div><div class="core-text"><strong>NX</strong><small>ONLINE</small></div></div></div>
+</section>
+
+<section class="stats-strip"><div><b id="liveStatus">ONLINE</b><small>SERVER</small></div><div><b>FREE</b><small>TOOLS</small></div><div><b>SQL</b><small>DATABASE</small></div><div><b>SAFE</b><small>CYBER DEMOS</small></div></section>
+
+<section id="gaming"><div class="section-head"><div><span class="eyebrow">01 / GAMING LAB</span><h2>Gaming <span>Loadout</span></h2></div><p>Generate and save your preferred practice values locally.</p></div>
+<div class="grid">
+<div class="card featured"><div class="card-top"><span class="icon">🎯</span><span class="pill">FREE FIRE</span></div><h3>Smart Sensitivity</h3><label>Device<input id="device" placeholder="e.g. Infinix / Redmi"></label><label>RAM<select id="ram"><option>4 GB</option><option>6 GB</option><option>8 GB</option><option>12 GB</option><option>16 GB</option></select></label><div id="sens"></div><button onclick="generateSens()">GENERATE LOADOUT</button><pre id="sensOut"></pre></div>
+<div class="card"><div class="card-top"><span class="icon">🔭</span><span class="pill">PUBG MOBILE</span></div><h3>Preset Generator</h3><p class="muted">Balanced camera + ADS starter values. Tune them to your device and play style.</p><label>Device<input id="pdev" placeholder="Device name"></label><button onclick="pubg()">GENERATE PRESET</button><pre id="pubgOut"></pre></div>
+<div class="card"><div class="card-top"><span class="icon">🏃</span><span class="pill">PRACTICE</span></div><h3>Track Left</h3><p class="muted">A local drill timer for aim/tracking practice.</p><label>Drill<input id="drill" placeholder="Left peek / tracking"></label><label>Seconds<input id="secs" type="number" min="5" max="600" value="30"></label><button onclick="trackLeft()">START DRILL</button><div class="bar"><i id="prog"></i></div><p id="trackStatus">Ready.</p></div>
+</div></section>
+
+<section id="games"><div class="section-head"><div><span class="eyebrow">02 / ARCADE</span><h2>Mini <span>Games</span></h2></div><p>No downloads. Everything runs in your browser.</p></div>
+<div class="grid">
+<div class="card game-card"><span class="icon">⚡</span><h3>Reaction Test</h3><p class="muted">Wait for GO, then hit the button as fast as possible.</p><button id="reactionBtn" onclick="reactionStart()">START</button><p id="reactionResult">Best: —</p></div>
+<div class="card game-card"><span class="icon">🎯</span><h3>Aim Clicker</h3><p class="muted">Click the moving target 10 times.</p><div id="aimArena"><button id="aimTarget" onclick="aimHit()">+</button></div><button onclick="aimStart()">START AIM</button><p id="aimResult">Score: —</p></div>
+<div class="card game-card"><span class="icon">🔢</span><h3>Number Rush</h3><p class="muted">Tap numbers from 1 to 20 in order.</p><div id="numberGrid"></div><button onclick="numberStart()">START</button><p id="numberResult">Ready.</p></div>
+</div></section>
+
+<section id="cyber"><div class="section-head"><div><span class="eyebrow">03 / SAFE LAB</span><h2>Cyber <span>Simulator</span></h2></div><p>Visual theatre only. No camera access, scanning, exploitation or credential theft.</p></div>
+<div class="grid">
+<div class="card"><span class="icon">📷</span><h3>Camera Simulation</h3><button onclick="fakeCamera()">RUN SIMULATION</button><pre id="cam"></pre></div>
+<div class="card"><span class="icon">🛰️</span><h3>Network Map Demo</h3><button onclick="fakeMap()">GENERATE MAP</button><pre id="map"></pre></div>
+<div class="card"><span class="icon">🛡️</span><h3>Access Scan Demo</h3><button onclick="fakeScan()">START DEMO</button><pre id="scan"></pre></div>
+</div></section>
+
+<section id="bot"><div class="section-head"><div><span class="eyebrow">04 / ASSISTANT</span><h2>Nexus <span>Bot</span></h2></div><p>Free local helper — no paid AI API required.</p></div>
+<div class="bot card"><div id="botLog" class="bot-log"><div class="bot-msg"><b>NX-BOT</b><span>Hey Raja! Try: <code>gaming</code>, <code>games</code>, <code>cyber</code>, <code>account</code>, or <code>help</code>.</span></div></div><div class="bot-input"><input id="botInput" placeholder="Type a command…" onkeydown="if(event.key==='Enter')botSend()"><button onclick="botSend()">SEND</button></div></div></section>
+
+<section id="social"><div class="section-head"><div><span class="eyebrow">05 / CONNECT</span><h2>Social <span>Hub</span></h2></div></div><div class="social" id="socialLinks"></div></section>
+
+<section id="account"><div class="section-head"><div><span class="eyebrow">06 / IDENTITY</span><h2>Account <span>System</span></h2></div><p>Real server-side sessions + SQLite + bcrypt password hashing.</p></div>
+<div class="grid"><div class="card"><h3>Create account</h3><input id="re" placeholder="Email"><input id="rp" type="password" placeholder="Password (6+ chars)"><button onclick="register()">CREATE ACCOUNT</button></div><div class="card"><h3>Login</h3><input id="le" placeholder="Email"><input id="lp" type="password" placeholder="Password"><button onclick="login()">LOGIN</button><button class="ghost" onclick="logout()">LOGOUT</button></div></div><div class="notice" id="accountStatus">Not logged in.</div></section>
+
+<section id="admin"><div class="section-head"><div><span class="eyebrow">07 / CONTROL</span><h2>Admin <span>Console</span></h2></div></div><div class="card"><p class="muted">Admin login required. Analytics are generated from this app's own users and events.</p><button onclick="loadStats()">REFRESH STATS</button><pre id="stats"></pre></div></section>
+</main>
+<footer><div class="brand"><span class="brand-mark">RN</span><span>RAJA <b>NEXUS</b></span></div><p>Built to be free • Safe-by-design • © 2026</p></footer>
+<script src="app.js"></script>
+</body></html>

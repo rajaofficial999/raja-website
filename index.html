@@ -1,139 +1,139 @@
 <!doctype html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RAJA OFFICIAL — Ultimate Dashboard</title>
+<meta name="theme-color" content="#070b18">
+<title>RAJA OFFICIAL — Ultimate Hub</title>
 <style>
-:root{--bg:#060914;--panel:#0c1223;--panel2:#111a31;--txt:#f4f7ff;--muted:#a4afc9;--line:#29375f;--p:#735cff;--c:#20d2ee;--ok:#43db9a;--warn:#ffd166;--bad:#ff6475}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 15% 0,#29205d 0,#0b1021 35%,#040711 100%);color:var(--txt);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-header{position:sticky;top:0;z-index:50;background:#060914eF;backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-.nav{max-width:1150px;margin:auto;padding:13px 18px;display:flex;align-items:center;justify-content:space-between}
-.brand{font-weight:1000;font-size:clamp(25px,6vw,42px);letter-spacing:3px;line-height:1}
-.brand .r{color:#20d2ee}.brand .o{color:#fff}
-.menuBtn{background:#111a31;color:white;border:1px solid var(--line);border-radius:12px;font-size:23px;padding:7px 11px}
-.menu{display:none;max-width:1150px;margin:auto;padding:0 18px 13px;gap:8px;flex-wrap:wrap}.menu.open{display:flex}.menu button,.chip{background:#111a31;color:#e9eeff;border:1px solid var(--line);border-radius:10px;padding:9px 12px}
-main{max-width:1150px;margin:auto;padding:25px 18px 70px}.hero{padding:20px 0 32px}.eyebrow{font-weight:900;color:var(--c);letter-spacing:1px}.hero h1{font-size:clamp(46px,9vw,92px);line-height:.88;margin:13px 0 18px;letter-spacing:-3px}.hero h1 span{color:#9e8cff}.hero p{font-size:18px;line-height:1.6;color:var(--muted);max-width:800px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(275px,1fr));gap:16px}.wide{grid-column:1/-1}.card{background:linear-gradient(145deg,#111a31,#080d1c);border:1px solid var(--line);border-radius:21px;padding:20px;box-shadow:0 15px 45px #0005}.card h2{margin:0 0 10px}.muted{color:var(--muted)}.feature{min-height:165px}
-button{cursor:pointer}.primary{background:linear-gradient(90deg,var(--p),var(--c));border:0;color:#fff;font-weight:900;border-radius:12px;padding:12px 16px}.secondary{background:#111a31;border:1px solid #3a4a77;color:#fff;border-radius:12px;padding:11px 15px}.danger{background:#28121a;border:1px solid #743340;color:#ffb5c0;border-radius:12px;padding:11px 15px}.row{display:flex;gap:9px;flex-wrap:wrap}
-input,select,textarea{width:100%;background:#060a16;color:#fff;border:1px solid #354675;border-radius:12px;padding:13px;margin:6px 0 12px;font:inherit}textarea{min-height:110px}
-label{font-size:13px;font-weight:800;color:#b8c4e5}.result{display:none;margin-top:14px;padding:14px;border:1px dashed #405583;border-radius:14px;line-height:1.6}.result.show{display:block}.ok{color:var(--ok)}.warn{color:var(--warn)}.bad{color:var(--bad)}
-.stat{font-size:36px;font-weight:1000}.small{font-size:13px}.pill{display:inline-block;padding:5px 9px;border-radius:999px;border:1px solid #40517e;color:#c7d2ef;margin:3px}
-.tool{display:flex;flex-direction:column;justify-content:space-between}.tool h3{margin:0 0 7px}.tool p{min-height:50px}.list{padding-left:20px}.list li{margin:9px 0;color:#c5cde0}
-#toast{display:none;position:fixed;right:15px;bottom:15px;z-index:100;background:#111a31;border:1px solid #41527f;padding:13px 16px;border-radius:12px;box-shadow:0 10px 30px #0008}
-.timer{font-size:54px;font-weight:1000;text-align:center;margin:15px 0}.bar{height:10px;background:#060a16;border-radius:20px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--p),var(--c))}
-footer{text-align:center;color:var(--muted);border-top:1px solid var(--line);padding:28px 18px}
-@media(max-width:600px){.hero h1{font-size:53px}.card{padding:17px}}
+:root{--bg:#060914;--panel:#0d1427;--panel2:#121c35;--txt:#f5f7ff;--muted:#aab5d0;--line:#2a3961;--p:#735cff;--c:#25d7ee;--ok:#43dc9a;--warn:#ffd166;--danger:#ff667b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--txt);background:radial-gradient(circle at 20% 0,#30266c 0,#0b1022 34%,#040711 100%);min-height:100vh}
+a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:18px}
+.top{position:sticky;top:0;z-index:20;background:rgba(5,8,18,.86);backdrop-filter:blur(14px);border-bottom:1px solid #202c4b}
+.nav{display:flex;align-items:center;gap:14px;max-width:1180px;margin:auto;padding:14px 18px}.brand{font-weight:1000;letter-spacing:3px;font-size:clamp(25px,6vw,44px);line-height:1;background:linear-gradient(90deg,#20d7ef,#fff,#8769ff);-webkit-background-clip:text;color:transparent;white-space:nowrap}.tag{font-size:11px;color:var(--muted);padding:6px 9px;border:1px solid var(--line);border-radius:999px}.menu{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid var(--line);background:#111a31;color:var(--txt);padding:10px 13px;border-radius:12px;cursor:pointer;font-weight:800}.btn:hover{transform:translateY(-1px);border-color:#5d75b5}.primary{background:linear-gradient(90deg,var(--p),var(--c));border:0}.hero{padding:42px 0 26px}.hero h1{font-size:clamp(38px,8vw,78px);line-height:.95;margin:0 0 15px;max-width:900px}.hero h1 span{color:#9b8cff}.hero p{color:var(--muted);font-size:18px;max-width:760px;line-height:1.7}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.chip{padding:8px 11px;background:#0d1730;border:1px solid var(--line);border-radius:999px;color:#cbd4ee;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:15px}.card{grid-column:span 4;background:linear-gradient(180deg,rgba(18,28,53,.94),rgba(8,13,27,.96));border:1px solid var(--line);border-radius:20px;padding:19px;box-shadow:0 15px 45px rgba(0,0,0,.22)}.wide{grid-column:span 8}.full{grid-column:1/-1}.card h2{margin:0 0 7px;font-size:21px}.card p{color:var(--muted);line-height:1.55}.icon{font-size:28px}.muted{color:var(--muted)}.row{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.stack>*{margin-bottom:10px}input,textarea,select{width:100%;background:#070c1b;color:var(--txt);border:1px solid #34446f;border-radius:12px;padding:12px;font:inherit;outline:none}textarea{min-height:110px;resize:vertical}.two{display:grid;grid-template-columns:1fr 1fr;gap:9px}.result{padding:12px;border-radius:12px;background:#070d1d;border:1px solid #253558;color:#dbe4ff;white-space:pre-wrap;min-height:42px}.tabs{display:flex;gap:7px;overflow:auto;margin:10px 0 18px}.tab{white-space:nowrap}.section{padding:20px 0}.section h2{font-size:28px;margin:0 0 14px}.hidden{display:none!important}.stat{font-size:32px;font-weight:950}.small{font-size:12px;color:var(--muted)}.game{min-height:160px}.ttt{display:grid;grid-template-columns:repeat(3,72px);gap:7px;justify-content:center}.cell{height:72px;font-size:28px;font-weight:900;background:#0a1022;border:1px solid #34446f;border-radius:12px;color:white;cursor:pointer}.note{font-size:13px;color:#8f9ab7;margin-top:8px}.footer{text-align:center;color:#7f8ba8;padding:40px 10px}.danger{color:#ff9cab}.ok{color:#7ff1bf}
+@media(max-width:850px){.card,.wide{grid-column:1/-1}.menu{display:none}.brand{font-size:28px}.hero{padding-top:30px}.two{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<header>
-<div class="nav">
-  <div class="brand"><span class="r">RAJA</span> <span class="o">OFFICIAL</span></div>
-  <button class="menuBtn" id="menuBtn">☰</button>
-</div>
-<div class="menu" id="menu">
- <button data-go="home">Home</button><button data-go="tools">Tools</button><button data-go="profile">Profile</button>
- <button data-go="games">Games</button><button data-go="timer">Focus</button><button data-go="notes">Notes</button><button data-go="support">Support</button>
-</div>
-</header>
+<header class="top"><nav class="nav">
+<div class="brand">RAJA OFFICIAL</div><div class="tag">ULTIMATE HUB</div>
+<div class="menu"><a class="btn" href="#tools">Tools</a><a class="btn" href="#games">Games</a><a class="btn" href="#security">Security</a></div>
+</nav></header>
 
-<main id="home">
+<main class="wrap">
 <section class="hero">
- <div class="eyebrow">⚡ RAJA OFFICIAL • DIGITAL HUB</div>
- <h1>PLAY.<br><span>CREATE.</span><br>STAY AHEAD.</h1>
- <p>Gaming भी है, लेकिन सिर्फ gaming नहीं। यहाँ calculators, notes, study tools, focus timer, quick utilities, profile card और useful information tools भी हैं।</p>
- <div class="row"><button class="primary" data-go="tools">Explore Tools</button><button class="secondary" data-go="profile">Create Profile</button></div>
+<h1>PLAY SMART.<br><span>BUILD. CREATE. STAY SAFE.</span></h1>
+<p>RAJA OFFICIAL का नया all‑in‑one dashboard — गेमिंग के साथ calculators, notes, generators, mini games, useful utilities और privacy‑first tools।</p>
+<div class="chips"><span class="chip">⚡ Fast</span><span class="chip">📱 Mobile Friendly</span><span class="chip">🔒 No token collection</span><span class="chip">🎮 Mini Games</span></div>
 </section>
 
-<section class="grid">
- <div class="card"><div class="stat">12+</div><div class="muted">Useful mini tools</div></div>
- <div class="card"><div class="stat">LOCAL</div><div class="muted">Profile & notes stay in this browser</div></div>
- <div class="card"><div class="stat">1 FILE</div><div class="muted">Simple GitHub Pages deployment</div></div>
-</section>
-
-<section id="tools" style="margin-top:28px">
+<section id="tools" class="section">
 <h2>🧰 Useful Tools</h2>
 <div class="grid">
- <div class="card tool"><div><h3>🧮 Percentage Calculator</h3><p class="muted">Find X% of a number.</p></div><button class="secondary" id="pctBtn">Calculate</button><input id="pctA" type="number" placeholder="Number"><input id="pctB" type="number" placeholder="Percent"><div class="result" id="pctOut"></div></div>
- <div class="card tool"><div><h3>📊 K/D & Win Rate</h3><p class="muted">Works for any game.</p></div><input id="kills" type="number" placeholder="Kills / wins"><input id="deaths" type="number" placeholder="Deaths / matches"><button class="secondary" id="kdBtn">Calculate</button><div class="result" id="kdOut"></div></div>
- <div class="card tool"><div><h3>💰 Budget Splitter</h3><p class="muted">Split a bill between people.</p></div><input id="bill" type="number" placeholder="Total amount"><input id="people" type="number" placeholder="People"><button class="secondary" id="billBtn">Split</button><div class="result" id="billOut"></div></div>
- <div class="card tool"><div><h3>🧠 Random Decision</h3><p class="muted">Enter options separated by commas.</p></div><input id="options" placeholder="Study, Game, Walk, Music"><button class="secondary" id="pickBtn">Pick one</button><div class="result" id="pickOut"></div></div>
- <div class="card tool"><div><h3>🔐 Password Strength</h3><p class="muted">Checks a password locally; nothing is sent.</p></div><input id="pass" type="password" placeholder="Type password"><button class="secondary" id="passBtn">Check</button><div class="result" id="passOut"></div></div>
- <div class="card tool"><div><h3>🔗 Quick Link Checker</h3><p class="muted">Validate a URL format.</p></div><input id="url" placeholder="https://example.com"><button class="secondary" id="urlBtn">Check</button><div class="result" id="urlOut"></div></div>
+<div class="card">
+<div class="icon">🧮</div><h2>Quick Calculator</h2><p>Simple calculations बिना किसी server के।</p>
+<div class="stack"><input id="calc" placeholder="उदा. (25*4)+10/2"><button class="btn primary" onclick="calcNow()">Calculate</button><div id="calcOut" class="result">Result यहाँ आएगा।</div></div>
+</div>
+
+<div class="card">
+<div class="icon">🔁</div><h2>Unit Converter</h2><p>Length, weight और temperature जल्दी convert करो।</p>
+<div class="two"><input id="unitVal" type="number" value="1"><select id="unitType"><option value="kmmi">km → miles</option><option value="mikm">miles → km</option><option value="kgLb">kg → lb</option><option value="lbKg">lb → kg</option><option value="cF">°C → °F</option><option value="fC">°F → °C</option></select></div>
+<button class="btn primary" onclick="convert()">Convert</button><div id="unitOut" class="result">—</div>
+</div>
+
+<div class="card">
+<div class="icon">🔐</div><h2>Password Generator</h2><p>Random strong password locally generate करो।</p>
+<div class="row"><input id="passLen" type="number" min="8" max="64" value="16" style="flex:1"><button class="btn primary" onclick="makePass()">Generate</button></div>
+<div id="passOut" class="result"></div><button class="btn" onclick="copyText('passOut')">Copy</button>
+</div>
+
+<div class="card wide">
+<div class="icon">📝</div><h2>Private Notes</h2><p>यह note सिर्फ इसी browser की localStorage में रहता है। GitHub या server पर नहीं भेजा जाता।</p>
+<textarea id="notes" placeholder="अपना note यहाँ लिखो..."></textarea>
+<div class="row"><button class="btn primary" onclick="saveNotes()">Save locally</button><button class="btn" onclick="clearNotes()">Clear</button><span id="noteStatus" class="small"></span></div>
+</div>
+
+<div class="card">
+<div class="icon">⏱️</div><h2>Stopwatch</h2><div id="sw" class="stat">00:00.0</div>
+<div class="row"><button class="btn primary" onclick="swStart()">Start</button><button class="btn" onclick="swStop()">Stop</button><button class="btn" onclick="swReset()">Reset</button></div>
+</div>
+
+<div class="card">
+<div class="icon">🎯</div><h2>Reaction Test</h2><p>Start दबाओ। हरा होने पर तुरंत tap करो।</p>
+<button id="reactBtn" class="btn primary" onclick="reaction()">Start</button><div id="reactOut" class="result">Best: —</div>
+</div>
 </div>
 </section>
 
-<section id="profile" style="margin-top:28px">
+<section id="games" class="section">
+<h2>🎮 Mini Games</h2>
 <div class="grid">
- <div class="card"><h2>👤 My Profile</h2><p class="muted">Personal profile stored only in this browser.</p>
- <label>Display name</label><input id="name" placeholder="Your name">
- <label>Public UID / ID (optional)</label><input id="pid" placeholder="Optional">
- <label>Bio</label><textarea id="bio" placeholder="Write something about yourself..."></textarea>
- <div class="row"><button class="primary" id="save">Save</button><button class="danger" id="del">Delete</button></div>
- <div class="result" id="profileMsg"></div></div>
- <div class="card"><h2>✨ Profile Card</h2><div id="preview" class="muted">Create your profile to see it here.</div></div>
+<div class="card">
+<div class="icon">❌⭕</div><h2>Tic‑Tac‑Toe</h2><p id="tttMsg">तुम X हो। चाल चलो।</p>
+<div id="board" class="ttt"></div><br><button class="btn" onclick="tttReset()">New Game</button>
+</div>
+
+<div class="card">
+<div class="icon">🖱️</div><h2>Click Challenge</h2><p>10 seconds में जितने clicks कर सको!</p>
+<div id="clickScore" class="stat">0</div><button id="clickBtn" class="btn primary" onclick="clickGame()">Start 10s</button><div id="clickOut" class="result">Ready?</div>
+</div>
+
+<div class="card wide">
+<div class="icon">🧠</div><h2>Quick Quiz</h2><p id="quizQ">Loading...</p><div id="quizOpts" class="row"></div><div id="quizOut" class="result">Score: 0</div>
+</div>
 </div>
 </section>
 
-<section id="games" style="margin-top:28px">
-<h2>🎮 Game Zone</h2>
+<section id="security" class="section">
+<h2>🛡️ Privacy & Security</h2>
 <div class="grid">
- <div class="card"><h3>Free Fire / BGMI / CODM</h3><p class="muted">K/D, win rate, sensitivity notes, training timer and personal settings. No private account credentials needed.</p></div>
- <div class="card"><h3>🎯 Training Challenge</h3><p class="muted">10-minute practice: warm-up → accuracy → movement → reaction. Track your score in Notes.</p><button class="secondary" data-go="timer">Start Focus</button></div>
- <div class="card"><h3>📚 Game Knowledge</h3><p class="muted">Keep your own weapon notes, settings, map tips and strategy notes in the local notebook below.</p><button class="secondary" data-go="notes">Open Notebook</button></div>
+<div class="card full">
+<h2>Access Token वाली बात — साफ जवाब</h2>
+<p>इस website में <b>किसी का GitHub/Garena/access token माँगने, collect करने या server पर भेजने वाला feature नहीं रखा गया है</b>। Access token password जैसा secret credential होता है। उसे किसी unknown site में paste करना सुरक्षित नहीं है।</p>
+<p class="danger">अगर किसी service की API इस्तेमाल करनी हो, तो official OAuth/API flow और server-side secret management इस्तेमाल करना चाहिए — token को public HTML/JavaScript में hard-code नहीं करना चाहिए।</p>
+<div class="result">🔒 Demo rule: यह page credentials को कहीं upload नहीं करता।</div>
+</div>
 </div>
 </section>
 
-<section id="timer" style="margin-top:28px">
-<div class="card wide"><h2>⏱️ Focus / Training Timer</h2><p class="muted">Useful for gaming practice, study or workouts.</p>
-<div class="timer" id="clock">10:00</div><div class="bar"><i id="bar"></i></div><br>
-<div class="row"><button class="primary" id="start">Start</button><button class="secondary" id="pause">Pause</button><button class="secondary" id="reset">Reset</button></div></div>
-</section>
-
-<section id="notes" style="margin-top:28px">
-<div class="card wide"><h2>📝 Private Local Notebook</h2><p class="muted">Notes are saved only in this browser.</p><textarea id="notesBox" placeholder="Ideas, game settings, study notes, links..."></textarea><div class="row"><button class="primary" id="saveNotes">Save notes</button><button class="danger" id="clearNotes">Clear</button></div><div class="result" id="notesMsg"></div></div>
-</section>
-
-<section id="support" style="margin-top:28px">
+<section class="section">
+<h2>✨ Quick Info</h2>
 <div class="grid">
- <div class="card"><h2>🛟 Support</h2><textarea id="supportText" placeholder="Describe your issue..."></textarea><button class="primary" id="copy">Copy message</button></div>
- <div class="card"><h2>🛡️ Privacy Rule</h2><ul class="list"><li>Never ask visitors for passwords or OTPs.</li><li>Never collect session cookies or private access tokens.</li><li>Use authorized public APIs for public data.</li><li>Do not fake live account/profile results.</li></ul></div>
+<div class="card"><h2>📚 Study Timer</h2><p>25 मिनट focus + 5 मिनट break वाला Pomodoro.</p><div id="pom" class="stat">25:00</div><button class="btn primary" onclick="pomStart()">Start</button> <button class="btn" onclick="pomReset()">Reset</button></div>
+<div class="card"><h2>📅 Today</h2><p id="today"></p><p class="small">यह device की local date/time पर आधारित है।</p></div>
+<div class="card"><h2>🌐 Useful Links</h2><div class="stack"><a class="btn" href="https://github.com/" target="_blank" rel="noopener">GitHub</a><a class="btn" href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a></div></div>
 </div>
 </section>
+<footer class="footer">© <span id="year"></span> RAJA OFFICIAL • Built as a static, browser-first dashboard.</footer>
 </main>
 
-<footer>RAJA OFFICIAL • Useful tools • Gaming • Productivity • Local-first</footer>
-<div id="toast"></div>
 <script>
 const $=id=>document.getElementById(id);
-function toast(t){let x=$('toast');x.textContent=t;x.style.display='block';setTimeout(()=>x.style.display='none',2200)}
-function go(id){$(id)?.scrollIntoView({behavior:'smooth',block:'start'});$('menu').classList.remove('open')}
-document.querySelectorAll('[data-go]').forEach(x=>x.onclick=()=>go(x.dataset.go));
-$('menuBtn').onclick=()=>$('menu').classList.toggle('open');
-function show(id,msg){$(id).innerHTML=msg;$(id).classList.add('show')}
-$('pctBtn').onclick=()=>{let a=+$('pctA').value,b=+$('pctB').value;if(isNaN(a)||isNaN(b))return show('pctOut','Enter both numbers.');show('pctOut',`<b>${b}% of ${a} = ${(a*b/100).toFixed(2)}</b>`)}
-$('kdBtn').onclick=()=>{let k=+$('kills').value,d=+$('deaths').value;if(d<=0)return show('kdOut','Enter a value greater than 0.');show('kdOut',`Ratio: <b>${(k/d).toFixed(2)}</b>`)}
-$('billBtn').onclick=()=>{let a=+$('bill').value,p=+$('people').value;if(a<=0||p<=0)return show('billOut','Enter valid values.');show('billOut',`Each person pays <b>${(a/p).toFixed(2)}</b>`)}
-$('pickBtn').onclick=()=>{let a=$('options').value.split(',').map(x=>x.trim()).filter(Boolean);if(!a.length)return show('pickOut','Add some options.');show('pickOut',`🎲 <b>${a[Math.floor(Math.random()*a.length)]}</b>`)}
-$('passBtn').onclick=()=>{let p=$('pass').value,s=0;if(p.length>=8)s++;if(/[A-Z]/.test(p))s++;if(/[a-z]/.test(p))s++;if(/\d/.test(p))s++;if(/[^A-Za-z0-9]/.test(p))s++;show('passOut',s<3?'<span class="bad">Weak</span>':s<5?'<span class="warn">Medium</span>':'<span class="ok">Strong</span>')}
-$('urlBtn').onclick=()=>{try{let u=new URL($('url').value);show('urlOut',/^https?:$/.test(u.protocol)?'<span class="ok">Valid HTTP/HTTPS URL</span>':'<span class="bad">Use HTTP or HTTPS.</span>')}catch{show('urlOut','<span class="bad">Invalid URL.</span>')}}
-function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
-function render(){let p=JSON.parse(localStorage.getItem('raja_profile')||'null');if(p){$('name').value=p.name||'';$('pid').value=p.id||'';$('bio').value=p.bio||'';$('preview').innerHTML='<div style="font-size:32px;font-weight:1000">'+esc(p.name)+'</div><span class="pill">ID: '+esc(p.id||'—')+'</span><p>'+esc(p.bio||'')+'</p>'}}
-render();
-$('save').onclick=()=>{let p={name:$('name').value.trim(),id:$('pid').value.trim(),bio:$('bio').value.trim()};if(!p.name)return toast('Enter your name');localStorage.setItem('raja_profile',JSON.stringify(p));render();show('profileMsg','<span class="ok">Profile saved locally.</span>')};
-$('del').onclick=()=>{localStorage.removeItem('raja_profile');$('name').value='';$('pid').value='';$('bio').value='';$('preview').textContent='Create your profile to see it here.';toast('Profile deleted')};
-$('notesBox').value=localStorage.getItem('raja_notes')||'';
-$('saveNotes').onclick=()=>{localStorage.setItem('raja_notes',$('notesBox').value);show('notesMsg','<span class="ok">Notes saved locally.</span>')};
-$('clearNotes').onclick=()=>{localStorage.removeItem('raja_notes');$('notesBox').value='';toast('Notes cleared')};
-$('copy').onclick=async()=>{let t=$('supportText').value.trim()||'RAJA support request';try{await navigator.clipboard.writeText(t);toast('Copied')}catch{toast('Clipboard unavailable')}};
-
-let total=600,left=600,run=null;
-function paint(){let m=Math.floor(left/60),s=left%60;$('clock').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');$('bar').style.width=((total-left)/total*100)+'%'}
-$('start').onclick=()=>{if(run)return;run=setInterval(()=>{if(left<=0){clearInterval(run);run=null;toast('Time finished!');return}left--;paint()},1000)}
-$('pause').onclick=()=>{clearInterval(run);run=null}
-$('reset').onclick=()=>{clearInterval(run);run=null;left=total;paint()}
-paint();
+function calcNow(){try{$('calcOut').textContent=Function('"use strict";return ('+$('calc').value+')')()}catch(e){$('calcOut').textContent='Invalid expression'}} 
+function convert(){let v=Number($('unitVal').value),t=$('unitType').value,r={kmmi:v*.621371,mikm:v*1.609344,kgLb:v*2.2046226218,lbKg:v*.45359237,cF:v*9/5+32,fC:(v-32)*5/9}[t];$('unitOut').textContent=Number(r.toFixed(6))+(t==='cF'||t==='fC'?' °':'')}
+function makePass(){let n=Math.max(8,Math.min(64,Number($('passLen').value)||16)),chars='ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%^&*_-+=',a='';crypto.getRandomValues(new Uint32Array(n)).forEach(x=>a+=chars[x%chars.length]);$('passOut').textContent=a}
+function copyText(id){navigator.clipboard?.writeText($(id).textContent)}
+function saveNotes(){localStorage.setItem('raja_notes',$('notes').value);$('noteStatus').textContent='Saved on this device ✓'}
+function clearNotes(){localStorage.removeItem('raja_notes');$('notes').value='';$('noteStatus').textContent='Cleared'}
+$('notes').value=localStorage.getItem('raja_notes')||'';
+let swT=null,swS=0;function swRender(){let d=Date.now()-swS;let s=Math.floor(d/1000),ms=Math.floor(d%1000/100);$('sw').textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')+'.'+ms}
+function swStart(){if(!swT){swS=Date.now()-(Number($('sw').dataset.ms)||0);swT=setInterval(swRender,100)}}
+function swStop(){clearInterval(swT);swT=null;$('sw').dataset.ms=Date.now()-swS}
+function swReset(){swStop();$('sw').dataset.ms=0;$('sw').textContent='00:00.0'}
+let reactTimer=null,reactReady=false,reactStart=0,best=null;
+function reaction(){let b=$('reactBtn');if(reactTimer){clearTimeout(reactTimer);reactTimer=null;reactReady=true;b.textContent='TAP NOW!';b.style.background='#1bd66f';reactStart=performance.now();return}if(reactReady){let ms=Math.round(performance.now()-reactStart);best=best===null?ms:Math.min(best,ms);$('reactOut').textContent='Reaction: '+ms+' ms • Best: '+best+' ms';reactReady=false;b.textContent='Start';b.style.background='';return}b.textContent='Wait...';reactTimer=setTimeout(()=>{reactTimer=null;reactReady=true;b.textContent='TAP NOW!';reactStart=performance.now()},800+Math.random()*2600)}
+let board=Array(9).fill(''),turn='X',over=false;function tttRender(){let el=$('board');el.innerHTML='';board.forEach((v,i)=>{let b=document.createElement('button');b.className='cell';b.textContent=v;b.onclick=()=>tttMove(i);el.appendChild(b)})}
+function win(a){return [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]].some(x=>x.every(i=>a[i]&&a[i]===a[x[0]]))}
+function tttMove(i){if(board[i]||over)return;board[i]=turn;if(win(board)){over=true;$('tttMsg').textContent=turn+' wins! 🎉'}else if(board.every(Boolean)){over=true;$('tttMsg').textContent='Draw!'}else{turn=turn==='X'?'O':'X';if(turn==='O')setTimeout(ai,250)}tttRender()}
+function ai(){let free=board.map((v,i)=>v?null:i).filter(i=>i!==null);if(!free.length||over)return;tttMove(free[Math.floor(Math.random()*free.length)])}
+function tttReset(){board=Array(9).fill('');turn='X';over=false;$('tttMsg').textContent='तुम X हो। चाल चलो।';tttRender()}tttRender();
+let clicks=0,clickEnd=0,clickRun=false;function clickGame(){if(!clickRun){clicks=0;clickRun=true;clickEnd=Date.now()+10000;$('clickScore').textContent=0;$('clickBtn').textContent='CLICK!';let x=setInterval(()=>{if(Date.now()>=clickEnd){clearInterval(x);clickRun=false;$('clickBtn').textContent='Start 10s';$('clickOut').textContent='Final score: '+clicks}else $('clickOut').textContent='Time: '+((clickEnd-Date.now())/1000).toFixed(1)+'s'},50)}else{clicks++;$('clickScore').textContent=clicks}}
+const qs=[['Which one is a web language?',['HTML','MP3','PNG','ZIP'],0],['2 + 8 × 2 = ?',['20','18','12','16'],1],['Which is safer for a secret token?',['Public HTML','Private server secret store','Chat message','Screenshot'],1],['CSS mainly controls?',['Page style','Battery','GPS satellite','Audio cable'],0]];let qi=0,score=0;
+function quiz(){let q=qs[qi%qs.length];$('quizQ').textContent=(qi+1)+'. '+q[0];$('quizOpts').innerHTML='';q[1].forEach((o,i)=>{let b=document.createElement('button');b.className='btn';b.textContent=o;b.onclick=()=>{if(i===q[2])score++;qi++;$('quizOut').textContent='Score: '+score;quiz()};$('quizOpts').appendChild(b)})}quiz();
+let pomSec=1500,pomT=null;function pomRender(){$('pom').textContent=String(Math.floor(pomSec/60)).padStart(2,'0')+':'+String(pomSec%60).padStart(2,'0')}
+function pomStart(){if(pomT)return;pomT=setInterval(()=>{if(pomSec>0){pomSec--;pomRender()}else{clearInterval(pomT);pomT=null;alert('Focus session complete! 🎉')}},1000)}
+function pomReset(){clearInterval(pomT);pomT=null;pomSec=1500;pomRender()}
+$('today').textContent=new Date().toLocaleString('hi-IN',{dateStyle:'full',timeStyle:'short'});$('year').textContent=new Date().getFullYear();
 </script>
-</body>
-</html>
+</body></html>

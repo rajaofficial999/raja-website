@@ -1,150 +1,144 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>RAJA Official — Free Fire Community Hub</title>
-  <meta name="description" content="RAJA Official — an independent community information hub for Free Fire players.">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RAJA OFFICIAL — Free Fire Community Hub</title>
+<style>
+:root{--bg:#050712;--card:#0b1020;--line:#26315a;--txt:#eef2ff;--muted:#8f9aba;--p:#8b7cff;--c:#4de7ff;--ok:#55e38a;--bad:#ff617c}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% 0,#24145b 0,transparent 35%),radial-gradient(circle at 100% 20%,#063b4d 0,transparent 30%),var(--bg);color:var(--txt);font-family:Inter,system-ui,Arial,sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(#fff1 1px,transparent 1px),linear-gradient(90deg,#fff1 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,#000,transparent 90%);opacity:.14}
+header{position:sticky;top:0;z-index:10;background:#070a14e8;backdrop-filter:blur(18px);border-bottom:1px solid #7d75ff33}
+.nav{max-width:1150px;margin:auto;padding:15px 18px;display:flex;align-items:center;gap:18px;justify-content:space-between}.brand{font-weight:950;letter-spacing:2px;font-size:21px}.brand b{color:var(--c)}.links{display:flex;gap:8px;flex-wrap:wrap}.links a{color:#dbe2ff;text-decoration:none;padding:9px 12px;border:1px solid transparent;border-radius:11px}.links a:hover{border-color:#8b7cff55;background:#8b7cff12}.menu{display:none}
+main{max-width:1150px;margin:auto;padding:32px 18px 70px}.hero{padding:28px 0 20px}.eyebrow{color:var(--c);letter-spacing:3px;font-weight:900}.hero h1{font-size:clamp(44px,8vw,82px);line-height:.94;margin:16px 0;background:linear-gradient(90deg,#fff,#8b7cff,#4de7ff);-webkit-background-clip:text;color:transparent}.hero p{max-width:760px;color:var(--muted);font-size:18px;line-height:1.7}
+.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.card{background:#090e1cf0;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 18px 60px #0007}.card h2{margin-top:0}.field{display:grid;gap:8px;margin:12px 0}.field label{font-size:13px;color:#aab5d8;font-weight:800}.input,.select,.btn{width:100%;padding:14px 15px;border-radius:13px;border:1px solid #35426f;background:#050817;color:#fff;font:inherit;outline:none}.input:focus,.select:focus{border-color:var(--p);box-shadow:0 0 0 3px #8b7cff18}.btn{cursor:pointer;background:linear-gradient(135deg,#675cff,#38cce8);font-weight:900;border:0}.btn.secondary{background:#11182b;border:1px solid #35426f}.row{display:grid;grid-template-columns:1fr 150px;gap:10px}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.status{min-height:22px;color:var(--muted);font-size:14px}.status.ok{color:var(--ok)}.status.bad{color:var(--bad)}
+.profile{display:none;margin-top:18px}.profile.show{display:block}.profileTop{display:flex;gap:16px;align-items:center}.avatar{width:76px;height:76px;border-radius:18px;background:linear-gradient(135deg,#8b7cff,#4de7ff);display:grid;place-items:center;font-weight:1000;font-size:28px;color:#070a14}.name{font-size:26px;font-weight:950}.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}.chip{padding:6px 9px;border-radius:999px;background:#111a31;border:1px solid #34436f;color:#b9c6ee;font-size:12px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:16px}.stat{padding:13px;border:1px solid #26345e;border-radius:14px;background:#0b1223}.stat small{display:block;color:#8491b6}.stat strong{display:block;margin-top:5px;font-size:18px}.result{margin-top:16px}.hidden{display:none}
+.featuregrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.feature{padding:18px;border-radius:18px;border:1px solid #293761;background:#0a1020}.feature b{font-size:18px}.feature p{color:var(--muted);line-height:1.5;font-size:14px}
+.note{border-left:3px solid var(--c);padding:12px 14px;background:#4de7ff08;color:#aeb9db;margin-top:12px}.danger{border-left-color:#ff617c}.games{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.game a{display:inline-block;margin-top:10px;color:#8ceeff;text-decoration:none}
+footer{border-top:1px solid #202a4a;padding:25px 18px;color:#7481a7;text-align:center}
+@media(max-width:800px){.grid,.featuregrid,.games{grid-template-columns:1fr}.links{display:none}.menu{display:block}.stats{grid-template-columns:repeat(2,1fr)}.row{grid-template-columns:1fr}.hero h1{font-size:54px}}
+</style>
 </head>
 <body>
-<header class="topbar">
-  <a class="brand" href="#home"><span class="brand-mark">RAJA</span> OFFICIAL</a>
-  <button class="menu" id="menuBtn">☰</button>
-  <nav id="nav">
-    <a href="#home">Home</a>
-    <a href="#profile">Profile</a>
-    <a href="#lookup">UID Lookup</a>
-    <a href="#guides">Guides</a>
-    <a href="#chatbot">Chatbot</a>
-    <a href="#tools">Tools</a>
-    <a href="#news">News</a>
-    <a href="#support">Support</a>
-  </nav>
-</header>
+<header><div class="nav">
+  <div class="brand"><b>RAJA</b> OFFICIAL</div>
+  <nav class="links">
+    <a href="#lookup">UID Lookup</a><a href="#features">Features</a><a href="#games">Games</a><a href="#support">Support</a>
+  </nav><button class="menu" onclick="document.querySelector('.links').classList.toggle('mobile')">☰</button>
+</div></header>
 
 <main>
-<section id="home" class="page active">
-  <div class="hero">
-    <div>
-      <p class="eyebrow">RAJA COMMUNITY HUB</p>
-      <h1>Play smarter. <span>Stay safe.</span></h1>
-      <p class="muted">A fan-made community website with public-profile tools, guides, a helpful chatbot and local sensitivity suggestions.</p>
-      <div class="actions">
-        <a class="btn" href="#chatbot">Open Chatbot</a>
-        <a class="btn ghost" href="#lookup">UID Lookup</a>
-      </div>
-    </div>
-    <div class="hero-card">
-      <div class="scan"></div>
-      <strong>RAJA OFFICIAL</strong>
-      <span>Independent community project</span>
-    </div>
-  </div>
-  <div class="notice">Not affiliated with or operated by Garena. Never enter your Garena password, OTP, session token or private account credentials here.</div>
+<section class="hero">
+ <div class="eyebrow">RAJA COMMUNITY HUB</div>
+ <h1>PLAY SMART.<br>STAY SAFE.</h1>
+ <p>Free Fire community tools, player lookup, statistics, guides, useful gaming resources and direct support — in one cyber-style dashboard.</p>
 </section>
 
-<section id="profile" class="page">
-  <h2>Player Profile</h2>
-  <div class="grid two">
-    <div class="card">
-      <label>Nickname</label><input id="pNick" placeholder="Your nickname">
-      <label>UID</label><input id="pUid" inputmode="numeric" placeholder="Your UID">
-      <label>Region</label><input id="pRegion" placeholder="e.g. India">
-      <button class="btn" id="saveProfile">Save on this device</button>
-      <button class="btn ghost" id="clearProfile">Clear</button>
-    </div>
-    <div class="card" id="profileCard">
-      <p class="eyebrow">PLAYER CARD</p>
-      <h3 id="cardNick">Guest Player</h3>
-      <p>UID: <span id="cardUid">—</span></p>
-      <p>Region: <span id="cardRegion">—</span></p>
-    </div>
+<section id="lookup" class="grid">
+ <div class="card">
+  <h2>⚡ Free Fire UID Scanner</h2>
+  <p style="color:var(--muted)">Enter a public player UID. Choose the correct region and use your API key. The key stays in this browser only.</p>
+  <div class="row">
+   <div class="field"><label>PLAYER UID</label><input id="uid" class="input" inputmode="numeric" placeholder="e.g. 1234567890"></div>
+   <div class="field"><label>REGION</label><select id="region" class="select"><option value="ind">IND</option><option value="sg">SG</option><option value="br">BR</option></select></div>
   </div>
+  <div class="field"><label>FREE FIRE COMMUNITY API KEY</label><input id="key" class="input" type="password" placeholder="Paste your API key here"></div>
+  <div class="actions"><button class="btn" onclick="lookup()">SEARCH PLAYER</button><button class="btn secondary" onclick="clearResult()">CLEAR</button></div>
+  <div id="status" class="status" style="margin-top:12px"></div>
+  <div id="profile" class="profile">
+   <div class="profileTop"><div id="avatar" class="avatar">R</div><div><div id="name" class="name">—</div><div id="sub" class="chips"></div></div></div>
+   <div class="stats">
+    <div class="stat"><small>LEVEL</small><strong id="level">—</strong></div>
+    <div class="stat"><small>RANK</small><strong id="rank">—</strong></div>
+    <div class="stat"><small>CS RANK</small><strong id="csrank">—</strong></div>
+    <div class="stat"><small>LIKES</small><strong id="likes">—</strong></div>
+   </div>
+   <div id="extra" class="note"></div>
+  </div>
+ </div>
+
+ <div class="card">
+  <h2>🔐 API Setup</h2>
+  <ol style="color:var(--muted);line-height:1.8">
+   <li>Create an API key with a legitimate Free Fire community API provider.</li>
+   <li>Paste it above when you search.</li>
+   <li>Do <b>not</b> put passwords, OTPs, session tokens or login cookies here.</li>
+   <li>The browser stores only the API key locally if you choose to use it again.</li>
+  </ol>
+  <div class="note danger">A UID lookup can only return data the API provider exposes. It cannot legitimately reveal private passwords, OTPs, tokens or hidden account credentials.</div>
+ </div>
 </section>
 
-<section id="lookup" class="page">
-  <h2>Public Profile Preview</h2>
-  <p class="muted">This demo does not access Garena's private systems. It shows information that a user provides locally. A real live lookup requires a legitimate authorized data source.</p>
-  <div class="card">
-    <label>UID</label>
-    <input id="lookupUid" inputmode="numeric" placeholder="Enter UID">
-    <label>Public nickname</label>
-    <input id="lookupNick" placeholder="Nickname">
-    <label>Public level</label>
-    <input id="lookupLevel" inputmode="numeric" placeholder="Level">
-    <button class="btn" id="lookupBtn">Show Profile</button>
-  </div>
-  <div id="lookupResult" class="card result hidden"></div>
+<section id="features" style="margin-top:34px">
+ <div class="eyebrow">TOOLS</div><h2>Everything useful in one place</h2>
+ <div class="featuregrid">
+  <div class="feature"><b>🎯 Player Lookup</b><p>Public profile information, level, rank, likes and region when returned by the API.</p></div>
+  <div class="feature"><b>📊 Stats</b><p>Connect the stats endpoint later to show matches, wins, kills, headshots and performance.</p></div>
+  <div class="feature"><b>🛡️ Safety</b><p>Never ask users for passwords, OTPs, access tokens or other private credentials.</p></div>
+  <div class="feature"><b>🏆 Rank Tools</b><p>Display BR/CS rank and ranking points when provided by the API.</p></div>
+  <div class="feature"><b>🧭 Guides</b><p>Build guides for sensitivity, HUD, controls, settings and gameplay tips.</p></div>
+  <div class="feature"><b>🎁 Referral</b><p>Add your own points/rewards system later with a real database/backend.</p></div>
+ </div>
 </section>
 
-<section id="guides" class="page">
-  <h2>Guides</h2>
-  <div class="grid three">
-    <article class="card"><h3>Account Safety</h3><p>Use a strong unique password, enable available account security features and never share OTPs or login credentials.</p></article>
-    <article class="card"><h3>Better Settings</h3><p>Use the Tools page to get a simple phone/play-style suggestion. Treat it as a starting point, not a guaranteed performance boost.</p></article>
-    <article class="card"><h3>Official Help</h3><p>For account problems, use official Garena support rather than third-party recovery services.</p></article>
-  </div>
+<section id="games" style="margin-top:34px">
+ <div class="eyebrow">GAMES</div><h2>Main + useful gaming links</h2>
+ <div class="games">
+  <div class="card game"><h3>🔥 Free Fire MAX</h3><p style="color:var(--muted)">Official game/resources.</p><a href="https://ff.garena.com/en/" target="_blank" rel="noopener">Open official site →</a></div>
+  <div class="card game"><h3>🎮 PUBG / BGMI</h3><p style="color:var(--muted)">Add the official regional download/support link you want to promote.</p></div>
+  <div class="card game"><h3>📰 Gaming Hub</h3><p style="color:var(--muted)">Use this area for your own guides, news and community posts.</p></div>
+ </div>
 </section>
 
-<section id="chatbot" class="page">
-  <h2>RAJA Chatbot</h2>
-  <p class="muted">A built-in community helper. It answers common questions without asking for passwords, OTPs or private tokens.</p>
-  <div class="chat card">
-    <div id="chatLog" class="chatlog">
-      <div class="bot">RAJA Bot: Hi! Ask me about UID lookup, profile setup, sensitivity suggestions, account safety, or this website.</div>
-    </div>
-    <div class="chatbar">
-      <input id="chatInput" placeholder="Type your question...">
-      <button class="btn" id="sendChat">Send</button>
-    </div>
-    <div class="quick">
-      <button data-q="How does UID lookup work?">UID lookup</button>
-      <button data-q="Give me sensitivity help">Sensitivity</button>
-      <button data-q="How do I protect my account?">Account safety</button>
-      <button data-q="How do I use this website?">Website help</button>
-    </div>
-  </div>
-</section>
-
-<section id="tools" class="page">
-  <h2>Tools</h2>
-  <div class="grid two">
-    <div class="card">
-      <h3>Phone Sensitivity Helper</h3>
-      <label>Phone name</label><input id="phone" placeholder="e.g. Infinix Note series">
-      <label>Play style</label>
-      <select id="style"><option>Balanced</option><option>Smooth</option><option>Fast</option></select>
-      <button class="btn" id="suggest">Suggest</button>
-      <div id="suggestion" class="result hidden"></div>
-    </div>
-    <div class="card">
-      <h3>Manual Calculator</h3>
-      <label>Base value (0–200)</label><input id="base" type="number" min="0" max="200" value="100">
-      <button class="btn" id="calc">Calculate</button>
-      <div id="calcResult" class="result hidden"></div>
-    </div>
-  </div>
-</section>
-
-<section id="news" class="page">
-  <h2>Official Information</h2>
-  <div class="grid two">
-    <div class="card"><h3>Free Fire News</h3><p>Use Garena's official site for current announcements.</p><a class="btn" target="_blank" rel="noopener" href="https://ff.garena.com/en/news">Open Official News</a></div>
-    <div class="card"><h3>Official Support</h3><p>For account and game support, use Garena's official support channel.</p><a class="btn" target="_blank" rel="noopener" href="https://ffsupport.garena.com/">Open Support</a></div>
-  </div>
-</section>
-
-<section id="support" class="page">
-  <h2>Support & Brand</h2>
-  <div class="card">
-    <p>RAJA Official is an independent community project. It does not represent Garena.</p>
-    <a class="btn" target="_blank" rel="noopener" href="https://ff.garena.com/en/brand/">Official Free Fire Brand Page</a>
-  </div>
+<section id="support" style="margin-top:34px" class="card">
+ <div class="eyebrow">SUPPORT</div><h2>Need help?</h2>
+ <p style="color:var(--muted)">Users can contact RAJA OFFICIAL directly.</p>
+ <div class="actions">
+  <a class="btn" style="text-align:center;text-decoration:none" href="https://t.me/RAJA_THE_H4CKER_143" target="_blank" rel="noopener">Telegram Support</a>
+  <a class="btn secondary" style="text-align:center;text-decoration:none" href="https://www.instagram.com/sky__official__.x/" target="_blank" rel="noopener">Instagram</a>
+ </div>
 </section>
 </main>
+<footer>RAJA OFFICIAL • Independent community project • Do not enter passwords, OTPs or session tokens.</footer>
 
-<footer>© RAJA Official • Independent community project • No private credentials collected</footer>
-<script src="script.js"></script>
+<script>
+const API_BASE="https://developers.freefirecommunity.com/api/v1";
+const $=id=>document.getElementById(id);
+$("key").value=localStorage.getItem("raja_api_key")||"";
+
+function setStatus(msg,type=""){ $("status").textContent=msg; $("status").className="status "+type; }
+function clearResult(){ $("profile").classList.remove("show"); setStatus(""); $("uid").value=""; }
+function val(o,...keys){for(const k of keys){if(o && o[k]!==undefined && o[k]!==null)return o[k]}return "—"}
+
+async function lookup(){
+ const uid=$("uid").value.trim(), region=$("region").value, key=$("key").value.trim();
+ if(!/^\d{5,15}$/.test(uid)){setStatus("Enter a valid 5–15 digit UID.","bad");return}
+ if(!key){setStatus("API key required. Get one from your chosen API provider and paste it here.","bad");return}
+ localStorage.setItem("raja_api_key",key);
+ setStatus("Scanning public player data…");
+ $("profile").classList.remove("show");
+ try{
+   const url=API_BASE+"/info?region="+encodeURIComponent(region)+"&uid="+encodeURIComponent(uid);
+   const r=await fetch(url,{headers:{"x-api-key":key,"Accept":"application/json"}});
+   const text=await r.text();
+   let data; try{data=JSON.parse(text)}catch{throw new Error("API returned a non-JSON response ("+r.status+").")}
+   if(!r.ok) throw new Error(data.message||data.error||("API error "+r.status));
+   const b=data.basicInfo||data.basicinfo||data.data?.basicInfo||data.data||data;
+   const nickname=val(b,"nickname","name");
+   $("name").textContent=nickname;
+   $("level").textContent=val(b,"level");
+   $("rank").textContent=val(b,"rank","rankingPoints");
+   $("csrank").textContent=val(b,"csRank","csrank","csRankingPoints");
+   $("likes").textContent=val(b,"liked","likes");
+   $("avatar").textContent=(String(nickname).slice(0,1)||"R").toUpperCase();
+   $("sub").innerHTML="";
+   [["UID",uid],["REGION",val(b,"region")],["EXP",val(b,"exp")],["BADGES",val(b,"badgeCnt","badgecnt")]].forEach(x=>{const s=document.createElement("span");s.className="chip";s.textContent=x[0]+": "+x[1];$("sub").appendChild(s)});
+   $("extra").textContent="Player data loaded from the configured API. Raw private credentials are never requested or displayed.";
+   $("profile").classList.add("show"); setStatus("Player found.","ok");
+ }catch(e){
+   setStatus("Lookup failed: "+e.message+" — check UID, region, API key and provider status.","bad");
+ }
+}
+</script>
 </body>
 </html>

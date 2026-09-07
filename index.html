@@ -3,142 +3,137 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RAJA OFFICIAL — Free Fire Community Hub</title>
+<title>RAJA OFFICIAL — Ultimate Dashboard</title>
 <style>
-:root{--bg:#050712;--card:#0b1020;--line:#26315a;--txt:#eef2ff;--muted:#8f9aba;--p:#8b7cff;--c:#4de7ff;--ok:#55e38a;--bad:#ff617c}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% 0,#24145b 0,transparent 35%),radial-gradient(circle at 100% 20%,#063b4d 0,transparent 30%),var(--bg);color:var(--txt);font-family:Inter,system-ui,Arial,sans-serif}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(#fff1 1px,transparent 1px),linear-gradient(90deg,#fff1 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,#000,transparent 90%);opacity:.14}
-header{position:sticky;top:0;z-index:10;background:#070a14e8;backdrop-filter:blur(18px);border-bottom:1px solid #7d75ff33}
-.nav{max-width:1150px;margin:auto;padding:15px 18px;display:flex;align-items:center;gap:18px;justify-content:space-between}.brand{font-weight:950;letter-spacing:2px;font-size:21px}.brand b{color:var(--c)}.links{display:flex;gap:8px;flex-wrap:wrap}.links a{color:#dbe2ff;text-decoration:none;padding:9px 12px;border:1px solid transparent;border-radius:11px}.links a:hover{border-color:#8b7cff55;background:#8b7cff12}.menu{display:none}
-main{max-width:1150px;margin:auto;padding:32px 18px 70px}.hero{padding:28px 0 20px}.eyebrow{color:var(--c);letter-spacing:3px;font-weight:900}.hero h1{font-size:clamp(44px,8vw,82px);line-height:.94;margin:16px 0;background:linear-gradient(90deg,#fff,#8b7cff,#4de7ff);-webkit-background-clip:text;color:transparent}.hero p{max-width:760px;color:var(--muted);font-size:18px;line-height:1.7}
-.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.card{background:#090e1cf0;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 18px 60px #0007}.card h2{margin-top:0}.field{display:grid;gap:8px;margin:12px 0}.field label{font-size:13px;color:#aab5d8;font-weight:800}.input,.select,.btn{width:100%;padding:14px 15px;border-radius:13px;border:1px solid #35426f;background:#050817;color:#fff;font:inherit;outline:none}.input:focus,.select:focus{border-color:var(--p);box-shadow:0 0 0 3px #8b7cff18}.btn{cursor:pointer;background:linear-gradient(135deg,#675cff,#38cce8);font-weight:900;border:0}.btn.secondary{background:#11182b;border:1px solid #35426f}.row{display:grid;grid-template-columns:1fr 150px;gap:10px}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.status{min-height:22px;color:var(--muted);font-size:14px}.status.ok{color:var(--ok)}.status.bad{color:var(--bad)}
-.profile{display:none;margin-top:18px}.profile.show{display:block}.profileTop{display:flex;gap:16px;align-items:center}.avatar{width:76px;height:76px;border-radius:18px;background:linear-gradient(135deg,#8b7cff,#4de7ff);display:grid;place-items:center;font-weight:1000;font-size:28px;color:#070a14}.name{font-size:26px;font-weight:950}.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}.chip{padding:6px 9px;border-radius:999px;background:#111a31;border:1px solid #34436f;color:#b9c6ee;font-size:12px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:16px}.stat{padding:13px;border:1px solid #26345e;border-radius:14px;background:#0b1223}.stat small{display:block;color:#8491b6}.stat strong{display:block;margin-top:5px;font-size:18px}.result{margin-top:16px}.hidden{display:none}
-.featuregrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.feature{padding:18px;border-radius:18px;border:1px solid #293761;background:#0a1020}.feature b{font-size:18px}.feature p{color:var(--muted);line-height:1.5;font-size:14px}
-.note{border-left:3px solid var(--c);padding:12px 14px;background:#4de7ff08;color:#aeb9db;margin-top:12px}.danger{border-left-color:#ff617c}.games{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.game a{display:inline-block;margin-top:10px;color:#8ceeff;text-decoration:none}
-footer{border-top:1px solid #202a4a;padding:25px 18px;color:#7481a7;text-align:center}
-@media(max-width:800px){.grid,.featuregrid,.games{grid-template-columns:1fr}.links{display:none}.menu{display:block}.stats{grid-template-columns:repeat(2,1fr)}.row{grid-template-columns:1fr}.hero h1{font-size:54px}}
+:root{--bg:#060914;--panel:#0c1223;--panel2:#111a31;--txt:#f4f7ff;--muted:#a4afc9;--line:#29375f;--p:#735cff;--c:#20d2ee;--ok:#43db9a;--warn:#ffd166;--bad:#ff6475}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 15% 0,#29205d 0,#0b1021 35%,#040711 100%);color:var(--txt);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{position:sticky;top:0;z-index:50;background:#060914eF;backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{max-width:1150px;margin:auto;padding:13px 18px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:1000;font-size:clamp(25px,6vw,42px);letter-spacing:3px;line-height:1}
+.brand .r{color:#20d2ee}.brand .o{color:#fff}
+.menuBtn{background:#111a31;color:white;border:1px solid var(--line);border-radius:12px;font-size:23px;padding:7px 11px}
+.menu{display:none;max-width:1150px;margin:auto;padding:0 18px 13px;gap:8px;flex-wrap:wrap}.menu.open{display:flex}.menu button,.chip{background:#111a31;color:#e9eeff;border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+main{max-width:1150px;margin:auto;padding:25px 18px 70px}.hero{padding:20px 0 32px}.eyebrow{font-weight:900;color:var(--c);letter-spacing:1px}.hero h1{font-size:clamp(46px,9vw,92px);line-height:.88;margin:13px 0 18px;letter-spacing:-3px}.hero h1 span{color:#9e8cff}.hero p{font-size:18px;line-height:1.6;color:var(--muted);max-width:800px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(275px,1fr));gap:16px}.wide{grid-column:1/-1}.card{background:linear-gradient(145deg,#111a31,#080d1c);border:1px solid var(--line);border-radius:21px;padding:20px;box-shadow:0 15px 45px #0005}.card h2{margin:0 0 10px}.muted{color:var(--muted)}.feature{min-height:165px}
+button{cursor:pointer}.primary{background:linear-gradient(90deg,var(--p),var(--c));border:0;color:#fff;font-weight:900;border-radius:12px;padding:12px 16px}.secondary{background:#111a31;border:1px solid #3a4a77;color:#fff;border-radius:12px;padding:11px 15px}.danger{background:#28121a;border:1px solid #743340;color:#ffb5c0;border-radius:12px;padding:11px 15px}.row{display:flex;gap:9px;flex-wrap:wrap}
+input,select,textarea{width:100%;background:#060a16;color:#fff;border:1px solid #354675;border-radius:12px;padding:13px;margin:6px 0 12px;font:inherit}textarea{min-height:110px}
+label{font-size:13px;font-weight:800;color:#b8c4e5}.result{display:none;margin-top:14px;padding:14px;border:1px dashed #405583;border-radius:14px;line-height:1.6}.result.show{display:block}.ok{color:var(--ok)}.warn{color:var(--warn)}.bad{color:var(--bad)}
+.stat{font-size:36px;font-weight:1000}.small{font-size:13px}.pill{display:inline-block;padding:5px 9px;border-radius:999px;border:1px solid #40517e;color:#c7d2ef;margin:3px}
+.tool{display:flex;flex-direction:column;justify-content:space-between}.tool h3{margin:0 0 7px}.tool p{min-height:50px}.list{padding-left:20px}.list li{margin:9px 0;color:#c5cde0}
+#toast{display:none;position:fixed;right:15px;bottom:15px;z-index:100;background:#111a31;border:1px solid #41527f;padding:13px 16px;border-radius:12px;box-shadow:0 10px 30px #0008}
+.timer{font-size:54px;font-weight:1000;text-align:center;margin:15px 0}.bar{height:10px;background:#060a16;border-radius:20px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--p),var(--c))}
+footer{text-align:center;color:var(--muted);border-top:1px solid var(--line);padding:28px 18px}
+@media(max-width:600px){.hero h1{font-size:53px}.card{padding:17px}}
 </style>
 </head>
 <body>
-<header><div class="nav">
-  <div class="brand"><b>RAJA</b> OFFICIAL</div>
-  <nav class="links">
-    <a href="#lookup">UID Lookup</a><a href="#features">Features</a><a href="#games">Games</a><a href="#support">Support</a>
-  </nav><button class="menu" onclick="document.querySelector('.links').classList.toggle('mobile')">☰</button>
-</div></header>
+<header>
+<div class="nav">
+  <div class="brand"><span class="r">RAJA</span> <span class="o">OFFICIAL</span></div>
+  <button class="menuBtn" id="menuBtn">☰</button>
+</div>
+<div class="menu" id="menu">
+ <button data-go="home">Home</button><button data-go="tools">Tools</button><button data-go="profile">Profile</button>
+ <button data-go="games">Games</button><button data-go="timer">Focus</button><button data-go="notes">Notes</button><button data-go="support">Support</button>
+</div>
+</header>
 
-<main>
+<main id="home">
 <section class="hero">
- <div class="eyebrow">RAJA COMMUNITY HUB</div>
- <h1>PLAY SMART.<br>STAY SAFE.</h1>
- <p>Free Fire community tools, player lookup, statistics, guides, useful gaming resources and direct support — in one cyber-style dashboard.</p>
+ <div class="eyebrow">⚡ RAJA OFFICIAL • DIGITAL HUB</div>
+ <h1>PLAY.<br><span>CREATE.</span><br>STAY AHEAD.</h1>
+ <p>Gaming भी है, लेकिन सिर्फ gaming नहीं। यहाँ calculators, notes, study tools, focus timer, quick utilities, profile card और useful information tools भी हैं।</p>
+ <div class="row"><button class="primary" data-go="tools">Explore Tools</button><button class="secondary" data-go="profile">Create Profile</button></div>
 </section>
 
-<section id="lookup" class="grid">
- <div class="card">
-  <h2>⚡ Free Fire UID Scanner</h2>
-  <p style="color:var(--muted)">Enter a public player UID. Choose the correct region and use your API key. The key stays in this browser only.</p>
-  <div class="row">
-   <div class="field"><label>PLAYER UID</label><input id="uid" class="input" inputmode="numeric" placeholder="e.g. 1234567890"></div>
-   <div class="field"><label>REGION</label><select id="region" class="select"><option value="ind">IND</option><option value="sg">SG</option><option value="br">BR</option></select></div>
-  </div>
-  <div class="field"><label>FREE FIRE COMMUNITY API KEY</label><input id="key" class="input" type="password" placeholder="Paste your API key here"></div>
-  <div class="actions"><button class="btn" onclick="lookup()">SEARCH PLAYER</button><button class="btn secondary" onclick="clearResult()">CLEAR</button></div>
-  <div id="status" class="status" style="margin-top:12px"></div>
-  <div id="profile" class="profile">
-   <div class="profileTop"><div id="avatar" class="avatar">R</div><div><div id="name" class="name">—</div><div id="sub" class="chips"></div></div></div>
-   <div class="stats">
-    <div class="stat"><small>LEVEL</small><strong id="level">—</strong></div>
-    <div class="stat"><small>RANK</small><strong id="rank">—</strong></div>
-    <div class="stat"><small>CS RANK</small><strong id="csrank">—</strong></div>
-    <div class="stat"><small>LIKES</small><strong id="likes">—</strong></div>
-   </div>
-   <div id="extra" class="note"></div>
-  </div>
- </div>
-
- <div class="card">
-  <h2>🔐 API Setup</h2>
-  <ol style="color:var(--muted);line-height:1.8">
-   <li>Create an API key with a legitimate Free Fire community API provider.</li>
-   <li>Paste it above when you search.</li>
-   <li>Do <b>not</b> put passwords, OTPs, session tokens or login cookies here.</li>
-   <li>The browser stores only the API key locally if you choose to use it again.</li>
-  </ol>
-  <div class="note danger">A UID lookup can only return data the API provider exposes. It cannot legitimately reveal private passwords, OTPs, tokens or hidden account credentials.</div>
- </div>
+<section class="grid">
+ <div class="card"><div class="stat">12+</div><div class="muted">Useful mini tools</div></div>
+ <div class="card"><div class="stat">LOCAL</div><div class="muted">Profile & notes stay in this browser</div></div>
+ <div class="card"><div class="stat">1 FILE</div><div class="muted">Simple GitHub Pages deployment</div></div>
 </section>
 
-<section id="features" style="margin-top:34px">
- <div class="eyebrow">TOOLS</div><h2>Everything useful in one place</h2>
- <div class="featuregrid">
-  <div class="feature"><b>🎯 Player Lookup</b><p>Public profile information, level, rank, likes and region when returned by the API.</p></div>
-  <div class="feature"><b>📊 Stats</b><p>Connect the stats endpoint later to show matches, wins, kills, headshots and performance.</p></div>
-  <div class="feature"><b>🛡️ Safety</b><p>Never ask users for passwords, OTPs, access tokens or other private credentials.</p></div>
-  <div class="feature"><b>🏆 Rank Tools</b><p>Display BR/CS rank and ranking points when provided by the API.</p></div>
-  <div class="feature"><b>🧭 Guides</b><p>Build guides for sensitivity, HUD, controls, settings and gameplay tips.</p></div>
-  <div class="feature"><b>🎁 Referral</b><p>Add your own points/rewards system later with a real database/backend.</p></div>
- </div>
+<section id="tools" style="margin-top:28px">
+<h2>🧰 Useful Tools</h2>
+<div class="grid">
+ <div class="card tool"><div><h3>🧮 Percentage Calculator</h3><p class="muted">Find X% of a number.</p></div><button class="secondary" id="pctBtn">Calculate</button><input id="pctA" type="number" placeholder="Number"><input id="pctB" type="number" placeholder="Percent"><div class="result" id="pctOut"></div></div>
+ <div class="card tool"><div><h3>📊 K/D & Win Rate</h3><p class="muted">Works for any game.</p></div><input id="kills" type="number" placeholder="Kills / wins"><input id="deaths" type="number" placeholder="Deaths / matches"><button class="secondary" id="kdBtn">Calculate</button><div class="result" id="kdOut"></div></div>
+ <div class="card tool"><div><h3>💰 Budget Splitter</h3><p class="muted">Split a bill between people.</p></div><input id="bill" type="number" placeholder="Total amount"><input id="people" type="number" placeholder="People"><button class="secondary" id="billBtn">Split</button><div class="result" id="billOut"></div></div>
+ <div class="card tool"><div><h3>🧠 Random Decision</h3><p class="muted">Enter options separated by commas.</p></div><input id="options" placeholder="Study, Game, Walk, Music"><button class="secondary" id="pickBtn">Pick one</button><div class="result" id="pickOut"></div></div>
+ <div class="card tool"><div><h3>🔐 Password Strength</h3><p class="muted">Checks a password locally; nothing is sent.</p></div><input id="pass" type="password" placeholder="Type password"><button class="secondary" id="passBtn">Check</button><div class="result" id="passOut"></div></div>
+ <div class="card tool"><div><h3>🔗 Quick Link Checker</h3><p class="muted">Validate a URL format.</p></div><input id="url" placeholder="https://example.com"><button class="secondary" id="urlBtn">Check</button><div class="result" id="urlOut"></div></div>
+</div>
 </section>
 
-<section id="games" style="margin-top:34px">
- <div class="eyebrow">GAMES</div><h2>Main + useful gaming links</h2>
- <div class="games">
-  <div class="card game"><h3>🔥 Free Fire MAX</h3><p style="color:var(--muted)">Official game/resources.</p><a href="https://ff.garena.com/en/" target="_blank" rel="noopener">Open official site →</a></div>
-  <div class="card game"><h3>🎮 PUBG / BGMI</h3><p style="color:var(--muted)">Add the official regional download/support link you want to promote.</p></div>
-  <div class="card game"><h3>📰 Gaming Hub</h3><p style="color:var(--muted)">Use this area for your own guides, news and community posts.</p></div>
- </div>
+<section id="profile" style="margin-top:28px">
+<div class="grid">
+ <div class="card"><h2>👤 My Profile</h2><p class="muted">Personal profile stored only in this browser.</p>
+ <label>Display name</label><input id="name" placeholder="Your name">
+ <label>Public UID / ID (optional)</label><input id="pid" placeholder="Optional">
+ <label>Bio</label><textarea id="bio" placeholder="Write something about yourself..."></textarea>
+ <div class="row"><button class="primary" id="save">Save</button><button class="danger" id="del">Delete</button></div>
+ <div class="result" id="profileMsg"></div></div>
+ <div class="card"><h2>✨ Profile Card</h2><div id="preview" class="muted">Create your profile to see it here.</div></div>
+</div>
 </section>
 
-<section id="support" style="margin-top:34px" class="card">
- <div class="eyebrow">SUPPORT</div><h2>Need help?</h2>
- <p style="color:var(--muted)">Users can contact RAJA OFFICIAL directly.</p>
- <div class="actions">
-  <a class="btn" style="text-align:center;text-decoration:none" href="https://t.me/RAJA_THE_H4CKER_143" target="_blank" rel="noopener">Telegram Support</a>
-  <a class="btn secondary" style="text-align:center;text-decoration:none" href="https://www.instagram.com/sky__official__.x/" target="_blank" rel="noopener">Instagram</a>
- </div>
+<section id="games" style="margin-top:28px">
+<h2>🎮 Game Zone</h2>
+<div class="grid">
+ <div class="card"><h3>Free Fire / BGMI / CODM</h3><p class="muted">K/D, win rate, sensitivity notes, training timer and personal settings. No private account credentials needed.</p></div>
+ <div class="card"><h3>🎯 Training Challenge</h3><p class="muted">10-minute practice: warm-up → accuracy → movement → reaction. Track your score in Notes.</p><button class="secondary" data-go="timer">Start Focus</button></div>
+ <div class="card"><h3>📚 Game Knowledge</h3><p class="muted">Keep your own weapon notes, settings, map tips and strategy notes in the local notebook below.</p><button class="secondary" data-go="notes">Open Notebook</button></div>
+</div>
+</section>
+
+<section id="timer" style="margin-top:28px">
+<div class="card wide"><h2>⏱️ Focus / Training Timer</h2><p class="muted">Useful for gaming practice, study or workouts.</p>
+<div class="timer" id="clock">10:00</div><div class="bar"><i id="bar"></i></div><br>
+<div class="row"><button class="primary" id="start">Start</button><button class="secondary" id="pause">Pause</button><button class="secondary" id="reset">Reset</button></div></div>
+</section>
+
+<section id="notes" style="margin-top:28px">
+<div class="card wide"><h2>📝 Private Local Notebook</h2><p class="muted">Notes are saved only in this browser.</p><textarea id="notesBox" placeholder="Ideas, game settings, study notes, links..."></textarea><div class="row"><button class="primary" id="saveNotes">Save notes</button><button class="danger" id="clearNotes">Clear</button></div><div class="result" id="notesMsg"></div></div>
+</section>
+
+<section id="support" style="margin-top:28px">
+<div class="grid">
+ <div class="card"><h2>🛟 Support</h2><textarea id="supportText" placeholder="Describe your issue..."></textarea><button class="primary" id="copy">Copy message</button></div>
+ <div class="card"><h2>🛡️ Privacy Rule</h2><ul class="list"><li>Never ask visitors for passwords or OTPs.</li><li>Never collect session cookies or private access tokens.</li><li>Use authorized public APIs for public data.</li><li>Do not fake live account/profile results.</li></ul></div>
+</div>
 </section>
 </main>
-<footer>RAJA OFFICIAL • Independent community project • Do not enter passwords, OTPs or session tokens.</footer>
 
+<footer>RAJA OFFICIAL • Useful tools • Gaming • Productivity • Local-first</footer>
+<div id="toast"></div>
 <script>
-const API_BASE="https://developers.freefirecommunity.com/api/v1";
 const $=id=>document.getElementById(id);
-$("key").value=localStorage.getItem("raja_api_key")||"";
+function toast(t){let x=$('toast');x.textContent=t;x.style.display='block';setTimeout(()=>x.style.display='none',2200)}
+function go(id){$(id)?.scrollIntoView({behavior:'smooth',block:'start'});$('menu').classList.remove('open')}
+document.querySelectorAll('[data-go]').forEach(x=>x.onclick=()=>go(x.dataset.go));
+$('menuBtn').onclick=()=>$('menu').classList.toggle('open');
+function show(id,msg){$(id).innerHTML=msg;$(id).classList.add('show')}
+$('pctBtn').onclick=()=>{let a=+$('pctA').value,b=+$('pctB').value;if(isNaN(a)||isNaN(b))return show('pctOut','Enter both numbers.');show('pctOut',`<b>${b}% of ${a} = ${(a*b/100).toFixed(2)}</b>`)}
+$('kdBtn').onclick=()=>{let k=+$('kills').value,d=+$('deaths').value;if(d<=0)return show('kdOut','Enter a value greater than 0.');show('kdOut',`Ratio: <b>${(k/d).toFixed(2)}</b>`)}
+$('billBtn').onclick=()=>{let a=+$('bill').value,p=+$('people').value;if(a<=0||p<=0)return show('billOut','Enter valid values.');show('billOut',`Each person pays <b>${(a/p).toFixed(2)}</b>`)}
+$('pickBtn').onclick=()=>{let a=$('options').value.split(',').map(x=>x.trim()).filter(Boolean);if(!a.length)return show('pickOut','Add some options.');show('pickOut',`🎲 <b>${a[Math.floor(Math.random()*a.length)]}</b>`)}
+$('passBtn').onclick=()=>{let p=$('pass').value,s=0;if(p.length>=8)s++;if(/[A-Z]/.test(p))s++;if(/[a-z]/.test(p))s++;if(/\d/.test(p))s++;if(/[^A-Za-z0-9]/.test(p))s++;show('passOut',s<3?'<span class="bad">Weak</span>':s<5?'<span class="warn">Medium</span>':'<span class="ok">Strong</span>')}
+$('urlBtn').onclick=()=>{try{let u=new URL($('url').value);show('urlOut',/^https?:$/.test(u.protocol)?'<span class="ok">Valid HTTP/HTTPS URL</span>':'<span class="bad">Use HTTP or HTTPS.</span>')}catch{show('urlOut','<span class="bad">Invalid URL.</span>')}}
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function render(){let p=JSON.parse(localStorage.getItem('raja_profile')||'null');if(p){$('name').value=p.name||'';$('pid').value=p.id||'';$('bio').value=p.bio||'';$('preview').innerHTML='<div style="font-size:32px;font-weight:1000">'+esc(p.name)+'</div><span class="pill">ID: '+esc(p.id||'—')+'</span><p>'+esc(p.bio||'')+'</p>'}}
+render();
+$('save').onclick=()=>{let p={name:$('name').value.trim(),id:$('pid').value.trim(),bio:$('bio').value.trim()};if(!p.name)return toast('Enter your name');localStorage.setItem('raja_profile',JSON.stringify(p));render();show('profileMsg','<span class="ok">Profile saved locally.</span>')};
+$('del').onclick=()=>{localStorage.removeItem('raja_profile');$('name').value='';$('pid').value='';$('bio').value='';$('preview').textContent='Create your profile to see it here.';toast('Profile deleted')};
+$('notesBox').value=localStorage.getItem('raja_notes')||'';
+$('saveNotes').onclick=()=>{localStorage.setItem('raja_notes',$('notesBox').value);show('notesMsg','<span class="ok">Notes saved locally.</span>')};
+$('clearNotes').onclick=()=>{localStorage.removeItem('raja_notes');$('notesBox').value='';toast('Notes cleared')};
+$('copy').onclick=async()=>{let t=$('supportText').value.trim()||'RAJA support request';try{await navigator.clipboard.writeText(t);toast('Copied')}catch{toast('Clipboard unavailable')}};
 
-function setStatus(msg,type=""){ $("status").textContent=msg; $("status").className="status "+type; }
-function clearResult(){ $("profile").classList.remove("show"); setStatus(""); $("uid").value=""; }
-function val(o,...keys){for(const k of keys){if(o && o[k]!==undefined && o[k]!==null)return o[k]}return "—"}
-
-async function lookup(){
- const uid=$("uid").value.trim(), region=$("region").value, key=$("key").value.trim();
- if(!/^\d{5,15}$/.test(uid)){setStatus("Enter a valid 5–15 digit UID.","bad");return}
- if(!key){setStatus("API key required. Get one from your chosen API provider and paste it here.","bad");return}
- localStorage.setItem("raja_api_key",key);
- setStatus("Scanning public player data…");
- $("profile").classList.remove("show");
- try{
-   const url=API_BASE+"/info?region="+encodeURIComponent(region)+"&uid="+encodeURIComponent(uid);
-   const r=await fetch(url,{headers:{"x-api-key":key,"Accept":"application/json"}});
-   const text=await r.text();
-   let data; try{data=JSON.parse(text)}catch{throw new Error("API returned a non-JSON response ("+r.status+").")}
-   if(!r.ok) throw new Error(data.message||data.error||("API error "+r.status));
-   const b=data.basicInfo||data.basicinfo||data.data?.basicInfo||data.data||data;
-   const nickname=val(b,"nickname","name");
-   $("name").textContent=nickname;
-   $("level").textContent=val(b,"level");
-   $("rank").textContent=val(b,"rank","rankingPoints");
-   $("csrank").textContent=val(b,"csRank","csrank","csRankingPoints");
-   $("likes").textContent=val(b,"liked","likes");
-   $("avatar").textContent=(String(nickname).slice(0,1)||"R").toUpperCase();
-   $("sub").innerHTML="";
-   [["UID",uid],["REGION",val(b,"region")],["EXP",val(b,"exp")],["BADGES",val(b,"badgeCnt","badgecnt")]].forEach(x=>{const s=document.createElement("span");s.className="chip";s.textContent=x[0]+": "+x[1];$("sub").appendChild(s)});
-   $("extra").textContent="Player data loaded from the configured API. Raw private credentials are never requested or displayed.";
-   $("profile").classList.add("show"); setStatus("Player found.","ok");
- }catch(e){
-   setStatus("Lookup failed: "+e.message+" — check UID, region, API key and provider status.","bad");
- }
-}
+let total=600,left=600,run=null;
+function paint(){let m=Math.floor(left/60),s=left%60;$('clock').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');$('bar').style.width=((total-left)/total*100)+'%'}
+$('start').onclick=()=>{if(run)return;run=setInterval(()=>{if(left<=0){clearInterval(run);run=null;toast('Time finished!');return}left--;paint()},1000)}
+$('pause').onclick=()=>{clearInterval(run);run=null}
+$('reset').onclick=()=>{clearInterval(run);run=null;left=total;paint()}
+paint();
 </script>
 </body>
 </html>
